@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, AppBar, Toolbar, Stack, Button } from "@mui/material";
-import { Select } from "antd";
 
 function Header() {
   const handleChange = (value: string) => {
@@ -36,7 +35,6 @@ function Header() {
                 gap={3}
               >
                 <Button>Logo</Button>
-                {/* <label for="language">Select a Programming Language:</label> */}
                 <select
                   name="language"
                   id="language"
@@ -49,21 +47,30 @@ function Header() {
                     Java
                   </option>
                 </select>
+                <Button
+                  size="small"
+                  variant="contained"
+                  className="rounded-sm p-0 bg-gray-800"
+                >
+                  Sign in
+                </Button>
               </Stack>
-              <Stack
-                direction={"row"}
-                alignItems="center"
-                justifyContent={"center"}
-                gap={3}
-              >
-                <Button>asf</Button>
-                <Button>asf</Button>
-              </Stack>
+
+              <div>
+                <Button>twetter</Button>
+                <Button>fb</Button>
+                <Button
+                  variant="contained"
+                  className="rounded-sm p-0 bg-gray-800 text-xs"
+                >
+                  Download Lightshot for free
+                </Button>
+              </div>
             </Stack>
           </Toolbar>
         </Container>
       </AppBar>
-      <div style={{ marginTop: "2.2rem" }} />
+      <div style={{ marginTop: "4rem" }} />
     </>
   );
 }

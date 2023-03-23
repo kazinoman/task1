@@ -1,11 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "next/font/google";
+import { Paper } from "@mui/material";
 import styles from "@/styles/Home.module.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// @component
+import { ParentSection } from "@/components";
+
+import { SectionInformation } from "@/data/section";
 
 export default function Home() {
+  // console.log(SectionInformation);
   return (
     <>
       <Head>
@@ -14,8 +18,24 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <main className="">
+        <Paper
+          className="flex flex-row align-middle ml-2 mr-2 mt-28 py-3 px-1"
+          elevation={12}
+          sx={{ overflowX: "auto" }}
+        >
+          {SectionInformation.map((data) => {
+            return (
+              <div key={data.id}>
+                <ParentSection
+                  id={data.id}
+                  name={data.name}
+                  personInfo={data.personInfo}
+                />
+              </div>
+            );
+          })}
+        </Paper>
       </main>
     </>
   );
