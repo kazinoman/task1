@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import { Avatar, IconButton, Paper, Typography } from "@mui/material";
+import React from "react";
+import { Avatar, IconButton, Paper } from "@mui/material";
 import { GrStackOverflow } from "react-icons/gr";
 import { BiTask } from "react-icons/bi";
 import { TbMessages } from "react-icons/tb";
@@ -20,7 +20,6 @@ const SinglePersonCard: React.FC<IPerson> = (props) => {
     unknownNumber,
   } = props;
 
-  console.log(image);
   return (
     <Paper elevation={0} className="p-2 mb-2 mx-2">
       <Stack className="justify-between mb-4">
@@ -81,7 +80,7 @@ const SinglePersonCard: React.FC<IPerson> = (props) => {
           <IconButton className="w-4 h-4 p-0" disableRipple>
             <TbMessages />
           </IconButton>
-          <h6 className="text-xs font-medium">14+</h6>
+          <h6 className="text-xs font-medium">{messageCount}+</h6>
         </Stack>
         <Stack className="gap-1">
           <IconButton className="w-4 h-4 p-0" disableRipple>
@@ -90,7 +89,7 @@ const SinglePersonCard: React.FC<IPerson> = (props) => {
           <h6 className="text-xs font-medium">14+</h6>
         </Stack>
         <Stack className="gap-1">
-          <IconButton className="w-4 h-4 p-0" disableRipple>
+          <IconButton className="w-3 h-3 p-0" disableRipple>
             <FaCalendarAlt />
           </IconButton>
           <h6 className="text-xs font-medium">{date}</h6>
